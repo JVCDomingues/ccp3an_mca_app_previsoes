@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Previsões do Tempo</title>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+		rel="stylesheet"/>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+		rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      	rel="stylesheet">
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" style="color: white;">Previsão do Tempo em SP - De 4 de março até 11 de março</a>
+			<i class="material-icons" style="color:white;">wb_sunny</i>	
+		</nav>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Cidade</th>
+			      <th scope="col">Dia da semana</th>
+			      <th scope="col">Temp. Mínima</th>
+			      <th scope="col">Temp. Máxima</th>
+			      <th scope="col">Umidade (%)</th>
+			      <th scope="col">Descrição</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="previsao : ${previsoes}">
+			      <th scope="row" th:text="${previsao.id}">1</th>
+			      <td th:text="${previsao.cidade}"></td>
+				  <td th:text="${previsao.diaSemana}"></td>
+				  <td th:text="${previsao.temperaturaMinima}"></td>
+				  <td th:text="${previsao.temperaturaMaxima}"></td>
+				  <td th:text="${previsao.umidade}"></td>
+				  <td th:text="${previsao.descricao}"></td>
+			    </tr>
+			  </tbody>
+		    </table>
+	</body>
+</html>
