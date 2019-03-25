@@ -1,45 +1,68 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width" />
-		<title>Previsões do Tempo</title>
-		<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-		rel="stylesheet"/>
-		<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-		rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      	rel="stylesheet">
-	</head>
-	<body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Previsões do Tempo</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" style="color: white;">Previsão do Tempo em
+			SP</a> <i class="material-icons" style="color: white;">wb_sunny</i>
+	</nav>
+
+	<form class="form-inline" method="post" style="margin: 30px 0;padding:5px" th:object="${previsao}" th:action="@{/previsoes}" >
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Cidade" th:field="*{cidade}" /> 
+			<input type="text" class="form-control" placeholder="Dia da semana" th:field="*{diaSemana}" /> 
+			<input type="text" class="form-control" placeholder="Temp. Mínima" th:field="*{temperaturaMinima}"/>
+			<input type="text" class="form-control" placeholder="Temp. Máxima" th:field="*{temperaturaMaxima}"/>
+			<input type="text" class="form-control" placeholder="Umidade" th:field="*{umidade}"/>
+			<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}"/>
+			<input type="text" class="form-control" placeholder="Data/Hora" th:field="*{dataHora}"/>
+			<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}"/>
+			<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}"/>
+			<button type="submit" class="btn btn-primary">Adicionar</button>
+		</div>
+	</form>
 	
-		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand" style="color: white;">Previsão do Tempo em SP - De 4 de março até 11 de março</a>
-			<i class="material-icons" style="color:white;">wb_sunny</i>	
-		</nav>
-			<table class="table table-striped">
-			  <thead>
-			    <tr>
-			      <th scope="col">#</th>
-			      <th scope="col">Cidade</th>
-			      <th scope="col">Dia da semana</th>
-			      <th scope="col">Temp. Mínima</th>
-			      <th scope="col">Temp. Máxima</th>
-			      <th scope="col">Umidade (%)</th>
-			      <th scope="col">Descrição</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr th:each="previsao : ${previsoes}">
-			      <th scope="row" th:text="${previsao.id}">1</th>
-			      <td th:text="${previsao.cidade}"></td>
-				  <td th:text="${previsao.diaSemana}"></td>
-				  <td th:text="${previsao.temperaturaMinima}"></td>
-				  <td th:text="${previsao.temperaturaMaxima}"></td>
-				  <td th:text="${previsao.umidade}"></td>
-				  <td th:text="${previsao.descricao}"></td>
-			    </tr>
-			  </tbody>
-		    </table>
-	</body>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Cidade</th>
+				<th scope="col">Dia da semana</th>
+				<th scope="col">Temp. Mínima</th>
+				<th scope="col">Temp. Máxima</th>
+				<th scope="col">Umidade (%)</th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Data/Hora</th>
+				<th scope="col">Latitude</th>
+				<th scope="col">Longitude</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="previsao : ${previsoes}">
+				<th scope="row" th:text="${previsao.id}">1</th>
+				<td th:text="${previsao.cidade}"></td>
+				<td th:text="${previsao.diaSemana}"></td>
+				<td th:text="${previsao.temperaturaMinima}"></td>
+				<td th:text="${previsao.temperaturaMaxima}"></td>
+				<td th:text="${previsao.umidade}"></td>
+				<td th:text="${previsao.descricao}"></td>
+				<td th:text="${previsao.dataHora}"></td>
+				<td th:text="${previsao.latitude}"></td>
+				<td th:text="${previsao.longitude}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
 </html>
