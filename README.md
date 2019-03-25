@@ -1,2 +1,4 @@
 # ccp3an_mca_app_previsoes
-Previsão do Tempo
+Exercícios dos PDFs de Arquitetura de Software
+
+João Victor Cardoso Domingues - 81712548
