@@ -1,10 +1,17 @@
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Segunda-Feira', 16.4, 20.7, 75, 'Chuvas com trovoadas', '20:30', '72C5A', '45785');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (2, 'São Paulo', 'Terça-Feira', 15.3, 26.4, 69, 'Tempestades isoladas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (3, 'São Paulo', 'Quarta-Feira', 17, 26.1, 60, 'Tempestades isoladas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (4, 'São Paulo', 'Quinta-Feira', 19.1, 27.6, 65, 'Tempestades isoladas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (5, 'São Paulo', 'Sexta-Feira', 18.7, 26.5, 68, 'Tempestades isoladas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (6, 'São Paulo', 'Sábado', 19.2, 22.3, 70, 'Chuvas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (7, 'São Paulo', 'Domingo', 16.8, 21.9, 75, 'Chuvas com trovoadas');
-insert into previsao (id, cidade, dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao) values (8, 'São Paulo', 'Segunda-Feira', 22.2, 25.4, 54, 'Tempo aberto');
+insert into dia_semana(dia_semana) values ('Segunda-Feira');
+insert into dia_semana(dia_semana) values ('Terça-Feira');
+insert into dia_semana(dia_semana) values ('Quarta-Feira');
+insert into dia_semana(dia_semana) values ('Quinta-Feira');
+insert into dia_semana(dia_semana) values ('Sexta-Feira');
+insert into dia_semana(dia_semana) values ('Sábado');
+insert into dia_semana(dia_semana) values ('Domingo')
+
+
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Segunda-Feira', 16.0, 27.0, 66, 'Parcialmente nublado', '01/04/19 14:00', '-23.55231662', '-46.59764898');
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Terça-Feira', 17.0, 28.0, 40, 'Parcialmente nublado', '02/04/19 14:00', '-23.55231662', '-46.59764898');
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Quarta-Feira', 18.0, 30.0, 42, 'Parcialmente nublado', '03/04/19 14:00', '-23.55231662', '-46.59764898');
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Quinta-Feira', 21.0, 32.0, 41, 'Sol com poucas nuvens', '04/04/19 14:00', '-23.55231662', '-46.59764898');
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Sexta-Feira', 20.0, 31.0, 51, 'Chuvas com trovoadas', '05/04/19 14:00', '-23.55231662', '-46.59764898');
+insert into previsao (id, cidade, dia_semana_dia_semana, temperatura_minima, temperatura_maxima, umidade, descricao, data_hora, latitude, longitude) values (1, 'São Paulo', 'Sábado', 18.0, 23.0, 74, 'Pancadas de chuva', '06/04/19 14:00', '-23.55231662', '-46.59764898');
 
 insert into usuario(id, username, senha) values (1, 'jvcdomingues', 'admin');

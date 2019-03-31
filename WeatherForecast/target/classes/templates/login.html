@@ -10,20 +10,29 @@
 		<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
 			rel="stylesheet" />
 	</head>
+	
+	<style>
+	input {
+		margin: 5px;
+	}
+	</style>
 	<body>
 		<div class="panel panel-default" style="margin: 10px">
 			<div class="panel-heading">
-				<h1 class="panel-title">Login</h1>
+				<h1 class="panel-title text-center">Login</h1>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="post" th:object="${usuario}" th:action="@{/fazerLogin}" style="margin: 20px 0">
-					<div class="form-group">
-						<input required type="text" class="form-control" placeholder="Usuário" th:field="*{username}" /> 
-						<input required type="password" class="form-control" placeholder="Senha" th:field="*{senha}" />
-						<button type="submit" class="btn btn-primary">Login</button>
+						<form class="form-inline" method="post" th:object="${usuario}"
+							th:action="@{/fazerLogin}" style="margin: 20px 0">
+							<div class="form-group">
+								<input required type="text" class="form-control"
+									placeholder="Usuário" th:field="*{username}" /> 
+								<input required type="password" class="form-control" placeholder="Senha"
+									th:field="*{senha}" />
+								<button type="submit" class="btn btn-primary">Login</button>
+							</div>
+						</form>
 					</div>
-				</form>
-			</div>
 		</div>
 	</body>
 </html>

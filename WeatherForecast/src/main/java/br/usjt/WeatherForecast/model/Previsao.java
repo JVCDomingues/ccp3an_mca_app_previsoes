@@ -2,10 +2,12 @@ package br.usjt.WeatherForecast.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Previsao implements Serializable {
@@ -14,9 +16,10 @@ public class Previsao implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
 	private String cidade;
-	private String diaSemana;
+	
+	@OneToOne
+	private DiaDaSemana diaSemana;
 	private double temperaturaMinima;
 	private double temperaturaMaxima;
 	private int umidade;
@@ -39,10 +42,10 @@ public class Previsao implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDiaSemana() {
+	public DiaDaSemana getDiaSemana() {
 		return diaSemana;
 	}
-	public void setDiaSemana(String diaSemana) {
+	public void setDiaSemana(DiaDaSemana diaSemana) {
 		this.diaSemana = diaSemana;
 	}
 	public double getTemperaturaMinima() {

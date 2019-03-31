@@ -19,20 +19,6 @@
 			SP</a> <i class="material-icons" style="color: white;">wb_sunny</i>
 	</nav>
 
-	<form class="form-inline" method="post" style="margin: 30px 0;padding:5px" th:object="${previsao}" th:action="@{/previsoes}" >
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Cidade" th:field="*{cidade}" /> 
-			<input type="text" class="form-control" placeholder="Dia da semana" th:field="*{diaSemana}" /> 
-			<input type="text" class="form-control" placeholder="Temp. Mínima" th:field="*{temperaturaMinima}"/>
-			<input type="text" class="form-control" placeholder="Temp. Máxima" th:field="*{temperaturaMaxima}"/>
-			<input type="text" class="form-control" placeholder="Umidade" th:field="*{umidade}"/>
-			<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}"/>
-			<input type="text" class="form-control" placeholder="Data/Hora" th:field="*{dataHora}"/>
-			<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}"/>
-			<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}"/>
-			<button type="submit" class="btn btn-primary">Adicionar</button>
-		</div>
-	</form>
 	
 	<table class="table table-striped">
 		<thead>
@@ -53,7 +39,7 @@
 			<tr th:each="previsao : ${previsoes}">
 				<th scope="row" th:text="${previsao.id}">1</th>
 				<td th:text="${previsao.cidade}"></td>
-				<td th:text="${previsao.diaSemana}"></td>
+				<td th:text="${previsao.diaSemana.diaSemana}"></td>
 				<td th:text="${previsao.temperaturaMinima}"></td>
 				<td th:text="${previsao.temperaturaMaxima}"></td>
 				<td th:text="${previsao.umidade}"></td>
