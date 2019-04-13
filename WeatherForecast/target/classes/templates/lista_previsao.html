@@ -15,8 +15,7 @@
 <body>
 
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" style="color: white;">Previsão do Tempo em
-			SP</a> <i class="material-icons" style="color: white;">wb_sunny</i>
+		<a class="navbar-brand" style="color: white;">Previsão do Tempo</a> <i class="material-icons" style="color: white;">wb_sunny</i>
 	</nav>
 
 	
@@ -24,7 +23,6 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col">Cidade</th>
 				<th scope="col">Dia da semana</th>
 				<th scope="col">Temp. Mínima</th>
 				<th scope="col">Temp. Máxima</th>
@@ -38,7 +36,6 @@
 		<tbody>
 			<tr th:each="previsao : ${previsoes}">
 				<th scope="row" th:text="${previsao.id}">1</th>
-				<td th:text="${previsao.cidade}"></td>
 				<td th:text="${previsao.diaSemana.diaSemana}"></td>
 				<td th:text="${previsao.temperaturaMinima}"></td>
 				<td th:text="${previsao.temperaturaMaxima}"></td>

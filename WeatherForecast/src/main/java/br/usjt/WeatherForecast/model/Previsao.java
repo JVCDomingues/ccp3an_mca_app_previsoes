@@ -2,11 +2,11 @@ package br.usjt.WeatherForecast.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,7 +16,9 @@ public class Previsao implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String cidade;
+	
+	@ManyToOne
+	private Cidade cidade;
 	
 	@OneToOne
 	private DiaDaSemana diaSemana;
@@ -29,11 +31,10 @@ public class Previsao implements Serializable {
 	private String longitude;
 	
 	
-	
-	public String getCidade() {
+	public Cidade getCidade() {
 		return cidade;
 	}
-	public void setCidade(String cidade) {
+	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 	public Long getId() {
